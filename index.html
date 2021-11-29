@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Nav | New Design</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            color: white;
+        }
+        #nav{
+            position: absolute;
+            right:-20px;
+            top: 20px;
+            transform: rotate(90deg);
+            color: white;
+            font-weight: 900;
+            letter-spacing: 2px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        #nav1{
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            display: none;
+            transform: rotate(90deg);
+            color: white;
+            font-weight: 900;
+            letter-spacing: 2px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    
+        #navbg{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            position: fixed;
+            /* margin:10px; */
+            background-image: url('images/navImg.png');
+           
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+            transition-duration: 0.5s;
+            transform: translateX(-95%);
+            /* transform: rotate(360deg) */
+        }
+        @media (max-width:700px) {
+            #navbg{
+            transform: translateX(-95%);
+             }
+             #nav1{
+                 display: none;
+             }
+        }
+        @media (min-width:700px) {
+           #nav2{
+               display: none;
+           }
+          
+        }
+        ul li {
+            font-weight: 900;
+            margin-top: 5px;
+            /* transform:rotateZ(30deg); */
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center" id="navbg">
+        <div class="row">
+            <div class="col-12 text-center">
+                <span id="nav">OPEN</span>
+                <span id="nav1">CLOSE</span>
+<ul style="list-style: none;">
+    <li><a href="#home" class="text-white text-decoration-none"> HOME</a></li>
+    <li><a href="#about" class="text-white text-decoration-none"> ABOUT</a></li>
+    <li><a href="#query" class="text-white text-decoration-none"> QUERY</a></li>
+    <li><a href="#contact" class="text-white text-decoration-none"> CONTACT</a></li>
+</ul>
+<!-- <span id="nav2">CLOSE</span> -->
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------- -->
+    <div class="container border" id="home">
+        <div class="row">
+            <div class="col-md-6 bg-info p-5">
+               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti similique voluptatibus a animi quis excepturi doloribus, nisi pariatur neque? Eos sapiente porro amet quibusdam esse vero ducimus ipsam! Deserunt, possimus.
+
+            </div>
+            <div class="col-md-6 bg-success p-5">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti similique voluptatibus a animi quis excepturi doloribus, nisi pariatur neque? Eos sapiente porro amet quibusdam esse vero ducimus ipsam! Deserunt, possimus.
+ 
+             </div>
+        </div>
+    </div>
+    <div class="container " id="about">
+        <div class="row">
+            <div class="col-md-6 bg-primary p-5  mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quidem consequuntur voluptates deleniti itaque cumque atque, adipisci facere, quaerat quod possimus tempore et vel officiis rerum delectus ab voluptate magnam.
+            </div>
+            <div class="col-md-6 bg-danger p-5  mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quidem consequuntur voluptates deleniti itaque cumque atque, adipisci facere, quaerat quod possimus tempore et vel officiis rerum delectus ab voluptate magnam.
+            </div>
+        </div>
+    </div>
+    <div class="container " id="query">
+        <div class="row">
+            <div class="col-md-6 bg-secondary p-5 mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quidem consequuntur voluptates deleniti itaque cumque atque, adipisci facere, quaerat quod possimus tempore et vel officiis rerum delectus ab voluptate magnam.
+            </div>
+            <div class="col-md-6 bg-warning p-5 mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quidem consequuntur voluptates deleniti itaque cumque atque, adipisci facere, quaerat quod possimus tempore et vel officiis rerum delectus ab voluptate magnam.
+            </div>
+        </div>
+    </div>
+
+    <div class="container " id="contact">
+        <div class="row">
+            <div class="col-md-6 bg-danger p-5 mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quidem consequuntur voluptates deleniti itaque cumque atque, adipisci facere, quaerat quod possimus tempore et vel officiis rerum delectus ab voluptate magnam.
+            </div>
+            <div class="col-md-6 bg-dark p-5 mt-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quidem consequuntur voluptates deleniti itaque cumque atque, adipisci facere, quaerat quod possimus tempore et vel officiis rerum delectus ab voluptate magnam.
+            </div>
+        </div>
+    </div>
+
+<script>
+    const btn = document.getElementById('nav');
+    const btn1 = document.getElementById('nav1');
+    // const btn2 = document.getElementById('nav2');
+    const body = document.getElementsByName('body');
+    const container = document.getElementById('navbg');
+
+    btn.addEventListener('click',function(){
+        // container.style.transform = 'translateX(-40%)';
+        container.style.transform = 'rotateZ(10deg)';
+        btn.style.display = "none";
+        btn1.style.display = "inline";
+
+        // body.style.scale= '1.1';
+
+    });
+    btn1.addEventListener('click',function(){
+        // container.style.transform = 'translateX(0px)';
+        container.style.transform = 'translateX(-95%)';
+        // container.style.transform = 'rotateY(-360deg)';
+        btn1.style.display = "none";
+        btn.style.display = "flex";
+
+    });
+   
+   
+</script>
+
+</body>
+</html>
